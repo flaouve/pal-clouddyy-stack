@@ -4,15 +4,15 @@ services:
       context: ./torrelay
       dockerfile: Dockerfile
     container_name: tor_relay
-    restart: always
+    restart: unless-stopped
     ports:
-      - "443:443/tcp"
+      - "4443:4443/tcp"
       - "9010:9010/tcp"
       - "9052:9052/tcp"
     networks:
       cloud_internal:
         aliases:
-          - tor_relay
+          - torrelay
     volumes:
       - tor_data:/var/lib/tor:Z
     security_opt:

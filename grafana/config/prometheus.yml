@@ -13,4 +13,4 @@ scrape_configs:
 
   - job_name: "tor-relay"
     static_configs:
-      - targets: ["tor_relay:9052"]
+      - targets: ["torrelay:9052"]
