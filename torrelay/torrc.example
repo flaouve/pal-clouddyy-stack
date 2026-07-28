@@ -3,3 +3,7 @@ ContactInfo your@e-mail  # Write your e-mail and be aware it will be published
 ORPort      443          # You might use a different port, should you want to
 ExitRelay   0
 SocksPort   0
+CookieAuthentication 1
+ControlPort 9010
+MetricsPort 9091
+MetricsPortPolicy accept 127.0.0.1

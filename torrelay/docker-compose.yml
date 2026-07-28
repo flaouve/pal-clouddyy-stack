@@ -6,7 +6,13 @@ services:
     container_name: tor_relay
     restart: always
     ports:
-      - 443:443
+      - "443:443/tcp"
+      - "9010:9010/tcp"
+      - "9052:9052/tcp"
+    networks:
+      cloud_internal:
+        aliases:
+          - tor_relay
     volumes:
       - tor_data:/var/lib/tor:Z
     security_opt:
@@ -22,3 +28,8 @@ services:
 
 volumes:
   tor_data:
+
+
+networks:
+  cloud_internal:
+    external: true

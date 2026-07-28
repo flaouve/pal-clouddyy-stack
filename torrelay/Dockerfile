@@ -1,7 +1,7 @@
 FROM docker.io/library/debian:stable-slim
 
 RUN apt update && \
-apt install -y tor && \
+apt install -y tor nyx && \
 rm -rf /var/lib/apt/lists/*
 
 COPY torrc /etc/tor/torrc
