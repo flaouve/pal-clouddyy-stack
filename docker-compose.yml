@@ -10,3 +10,4 @@ include:
   - ./grafana/docker-compose.yml
   - ./game-panel/docker-compose.yml
   - ./gitlabrunner/docker-compose.yml
+  - ./torrelay/docker-compose.yml

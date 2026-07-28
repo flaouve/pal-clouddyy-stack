@@ -1,0 +1,24 @@
+services:
+  tor-relay:
+    build:
+      context: ./torrelay
+      dockerfile: Dockerfile
+    container_name: tor_relay
+    restart: always
+    ports:
+      - 443:443
+    volumes:
+      - tor_data:/var/lib/tor:Z
+    security_opt:
+      - "label=disable"
+    deploy:
+      resources:
+        limits:
+          cpus: "1"
+          memory: 2060M
+        reservations:
+          cpus: "0.10"
+          memory: 64M
+
+volumes:
+  tor_data:
