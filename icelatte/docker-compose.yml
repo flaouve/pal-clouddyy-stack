@@ -4,8 +4,8 @@ services:
     container_name: icelatte-bot
     restart: unless-stopped
     environment:
-      - TOKEN=${icelatte_discord_bot}
-      - DEBUG=${icelatte_DEBUG}
+      - TOKEN=${ICELATTE_DISCORD_BOT}
+      - DEBUG=${ICELATTE_DEBUG}
     volumes:
       - icelatte_db:/app/database:Z
     deploy:

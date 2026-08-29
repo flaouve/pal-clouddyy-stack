@@ -4,7 +4,7 @@ services:
       context: ./littlelink/.
       dockerfile: Dockerfile
       args:
-        repo: ${littlelink_git_repo:-https://github.com/FuffyPal/littlelink.git}
+        repo: ${LITTLELINK_GIT_REPO:-https://github.com/FuffyPal/littlelink.git}
     container_name: littlelink-app
     restart: unless-stopped
     networks:

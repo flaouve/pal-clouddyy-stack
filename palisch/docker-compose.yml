@@ -4,7 +4,7 @@ services:
     container_name: palisch-bot
     restart: unless-stopped
     environment:
-      - DISCORD_TOKEN=${palisch_discord_bot}
+      - DISCORD_TOKEN=${PALISCH_DISCORD_BOT}
     deploy:
       resources:
         limits:

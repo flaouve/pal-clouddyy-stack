@@ -11,3 +11,4 @@ include:
   - ./game-panel/docker-compose.yml
   - ./gitlabrunner/docker-compose.yml
   - ./torrelay/docker-compose.yml
+  - ./plaka/docker-compose.yml
