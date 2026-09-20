@@ -31,7 +31,7 @@ services:
     environment:
       - GF_SERVER_ROOT_URL=${GF_SERVER_ROOT_URL}
     volumes:
-      - grafana_data:/var/lib/grafana
+      - grafana_data:/var/lib/grafana:Z
     networks:
       cloud_internal:
         aliases:
