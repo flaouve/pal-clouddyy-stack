@@ -6,6 +6,7 @@ services:
       args:
         repo: ${LITTLELINK_GIT_REPO:-https://github.com/FuffyPal/littlelink.git}
     container_name: littlelink-app
+    user: "0:0"
     restart: unless-stopped
     networks:
       - cloud_public

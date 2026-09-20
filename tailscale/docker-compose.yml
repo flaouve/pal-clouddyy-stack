@@ -5,6 +5,7 @@ services:
     image: docker.io/tailscale/tailscale:latest
     container_name: tailscale_exit_node
     hostname: cloud-vpn-exit
+    user: "0:0"
     restart: unless-stopped
     privileged: true
     networks:

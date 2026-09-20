@@ -4,6 +4,7 @@ services:
       context: ./torrelay
       dockerfile: Dockerfile
     container_name: tor_relay
+    user: "0:0"
     restart: unless-stopped
     ports:
       - "4443:4443/tcp"

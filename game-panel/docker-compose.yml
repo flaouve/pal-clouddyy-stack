@@ -4,6 +4,7 @@ services:
       context: ./game-panel
       dockerfile: Dockerfile
     container_name: ovh-panel
+    user: "0:0"
     environment:
       NODE_ENV: production
       PORT: 3001

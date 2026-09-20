@@ -2,6 +2,7 @@ services:
   planka:
     image: ghcr.io/plankanban/planka:latest
     container_name: planka-app
+    user: "0:0"
     restart: unless-stopped
     volumes:
       - planka_data:/app/data:Z
@@ -34,6 +35,7 @@ services:
   planka-db:
     image: docker.io/library/postgres:16-alpine
     container_name: planka-db
+    user: "0:0"
     restart: unless-stopped
     volumes:
       - planka_db_data:/var/lib/postgresql/data:Z

@@ -2,6 +2,7 @@ services:
   nextcloud-db:
     image: docker.io/library/mariadb:10.11
     container_name: nextcloud-db
+    user: "0:0"
     restart: always
     environment:
       - MARIADB_ROOT_PASSWORD=${NC_DB_ROOT_PASS}
@@ -23,6 +24,7 @@ services:
   nextcloud-app:
     image: docker.io/library/nextcloud:latest
     container_name: nextcloud-app
+    user: "0:0"
     restart: always
     depends_on:
       - nextcloud-db

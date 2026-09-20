@@ -2,6 +2,7 @@ services:
   icelatte:
     image: registry.gitlab.com/flaouve/discord-bot/icelatte:latest
     container_name: icelatte-bot
+    user: "0:0"
     restart: unless-stopped
     environment:
       - TOKEN=${ICELATTE_DISCORD_BOT}
