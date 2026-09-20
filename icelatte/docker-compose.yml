@@ -1,6 +1,6 @@
 services:
   icelatte:
-    image: registry.gitlab.com/flaouve/discord-bot/icelatte
+    image: registry.gitlab.com/flaouve/discord-bot/icelatte:latest
     container_name: icelatte-bot
     restart: unless-stopped
     environment:
