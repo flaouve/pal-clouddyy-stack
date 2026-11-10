@@ -59,13 +59,15 @@ services:
       - /:/rootfs:ro
       # - /var/run:/var/run:ro
       - /sys:/sys:ro
+      - /etc/machine-id:/etc/machine-id:ro
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
       - "${PODMAN_SOCK_PATH}:/var/run/podman/podman.sock:ro"
+      - "${PODMAN_SOCK_PATH}:/var/run/docker.sock:ro"
       - /var/lib/containers:/var/lib/containers:ro
+      - "${PODMAN_CONTAINERS_PATH}:/var/lib/containers:ro"
       - /dev/disk/:/dev/disk:ro
     devices:
       - /dev/kmsg
-    command: ["--docker=unix://", "-v=4"]
     networks:
       cloud_internal:
         aliases:
