@@ -63,7 +63,6 @@ services:
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
       - "${PODMAN_SOCK_PATH}:/var/run/podman/podman.sock:ro"
       - "${PODMAN_SOCK_PATH}:/var/run/docker.sock:ro"
-      - /var/lib/containers:/var/lib/containers:ro
       - "${PODMAN_CONTAINERS_PATH}:/var/lib/containers:ro"
       - /dev/disk/:/dev/disk:ro
     devices:
