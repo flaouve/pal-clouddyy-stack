@@ -57,12 +57,15 @@ services:
       - label=disable
     volumes:
       - /:/rootfs:ro
-      - /var/run:/var/run:ro
+      # - /var/run:/var/run:ro
       - /sys:/sys:ro
       - /sys/fs/cgroup:/sys/fs/cgroup:ro
-      - /run/podman/podman.sock:/var/run/podman/podman.sock:ro
+      - ${PODMAN_SOCK_PATH}:/var/run/podman/podman.sock:ro
       - /var/lib/containers:/var/lib/containers:ro
       - /dev/disk/:/dev/disk:ro
+    devices:
+      - /dev/kmsg
+    command: ["--docker=unix://"]
     networks:
       cloud_internal:
         aliases:
