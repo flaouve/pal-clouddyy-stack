@@ -47,6 +47,36 @@ services:
           cpus: "0.25"
           memory: 128M
 
+
+  cadvisor:
+    image: gcr.io/cadvisor/cadvisor:latest
+    container_name: cadvisor
+    restart: unless-stopped
+    privileged: true
+    security_opt:
+      - label=disable
+    volumes:
+      - /:/rootfs:ro
+      - /var/run:/var/run:ro
+      - /sys:/sys:ro
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+      - /run/podman/podman.sock:/var/run/podman/podman.sock:ro
+      - /var/lib/containers:/var/lib/containers:ro
+      - /dev/disk/:/dev/disk:ro
+    networks:
+      cloud_internal:
+        aliases:
+          - cadvisor
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 256M
+        reservations:
+          cpus: "0.10"
+          memory: 64M
+
+
 volumes:
   prometheus_data:
   grafana_data:
