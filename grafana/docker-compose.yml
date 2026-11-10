@@ -65,7 +65,7 @@ services:
       - /dev/disk/:/dev/disk:ro
     devices:
       - /dev/kmsg
-    command: ["--docker=unix://"]
+    command: ["--docker=unix://", "-v=4"]
     networks:
       cloud_internal:
         aliases:
